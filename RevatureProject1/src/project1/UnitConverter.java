@@ -23,26 +23,32 @@ public class UnitConverter {
 
 		boolean choice = true;
 
-		while (true) {
+		//You set your while(true) ==> infinity
+		
+		while (choice) {
 			switch (select) {
 			case 1:
 				CupstoTeaspoons(num);
 				System.out.println("Conversion from Cups to Teaspoons = " + num + "tsp");
+				choice = false;
 				break;
 
 			case 2:
 				MilestoKiloMeters(num);
 				System.out.println("Conversion from Miles to Kilometers = " + num + "km");
+				choice = false;
 				break;
 
 			case 3:
 				USGallonstoImperialGallons(num);
 				System.out.println("Conversion from US Gallons to Imperial Gallons = " + num + "Imperial Gallons");
+				choice = false;
 				break;
 
 			case 4:
 				System.out.println("Thank you, have a nice day.");
 				System.exit(0);
+				choice = false;
 				break;
 			}
 			UserInput.close();
