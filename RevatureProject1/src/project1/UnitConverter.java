@@ -10,74 +10,82 @@ public class UnitConverter {
 		double num;
 		System.out.println("Hello and Welcome to the Unit Converter. Please enter your number unit: ");
 		num = typing.nextInt();
-		
-		
+
 		System.out.println("Here are your conversion options: ");
 		System.out.println("1: Cups to Teaspoons");
 		System.out.println("2: Miles to Kilometers");
 		System.out.println("3: US Gallons to Imperial Gallons");
 		System.out.println("4: Quit");
-		
+
 		int select;
 		Scanner UserInput = new Scanner(System.in);
 		select = UserInput.nextInt();
-		
-		//Loop 
-		while(select == 1) {
+
+		boolean choice = true;
+
+		while (true) {
+			switch (select) {
+			case 1:
+				CupstoTeaspoons(num);
+				System.out.println("Conversion from Cups to Teaspoons = " + num + "tsp");
+				break;
+
+			case 2:
+				MilestoKiloMeters(num);
+				System.out.println("Conversion from Miles to Kilometers = " + num + "km");
+				break;
+
+			case 3:
+				USGallonstoImperialGallons(num);
+				System.out.println("Conversion from US Gallons to Imperial Gallons = " + num + "Imperial Gallons");
+				break;
+
+			case 4:
+				System.out.println("Thank you, have a nice day.");
+				System.exit(0);
+				break;
+			}
+			UserInput.close();
 			
-		} 
-		
-		if(select == 2) {
-			
+
 		}
-		
-		else if(select == 3) {
-			
-		}
-		
-		else if(select == 4) {
-			
-		}
-		
-		
 	}
-	
-	public double CupstoTeaspoons(double qty) {
+
+	public static double CupstoTeaspoons(double qty) {
 		// 1 cup is 48 teaspoons
 		double cup = 1;
 		double tsp = 48;
-		
-		double CtoTSP = cup * tsp; 
-		
+
+		double CtoTSP = cup * tsp;
+
 		// 1 tsp is 0.020 cups
 		double TSPtoC = (cup / tsp);
-		
+
 		return CtoTSP;
 	}
-	
-	public double USGallonstoImperialGallons(double qty) {
+
+	public static double USGallonstoImperialGallons(double qty) {
 		// 1 USG = 0.832674 IG
 		double usg = 1;
 		double ig = 0.832674;
-		
+
 		double USGtoIG = usg * ig;
 		// 1 IG = 1.20095 USG
-		
+
 		return USGtoIG;
 	}
-	
-	public double MilestoKiloMeters(double qty) {
+
+	public static double MilestoKiloMeters(double qty) {
 		// 1 meter is 0.001 km
-		double m  = 1;
+		double m = 1;
 		double km = 1000;
-		
-		double MtoKM = (m/km);
+
+		double MtoKM = (m / km);
 		// 1 km is 1000 meter
-		
+
 		double KMtoM = km * m;
-		
+
 		return MtoKM;
 	}
-	
 
 }
